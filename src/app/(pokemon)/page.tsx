@@ -11,7 +11,7 @@ export default async function Page(props: {
 }) {
   const searchParams = await props.searchParams;
   const types = getPokemonsByType();
-  const typeCsv = (searchParams?.type as string).trim() || '';
+  const typeCsv = (searchParams?.type as string)?.trim() || '';
   const offset = Number(searchParams?.page) || 1;
 
   const { count, results, next, previous } = await getPaginatedPokemons({
