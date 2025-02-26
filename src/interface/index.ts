@@ -14,7 +14,6 @@ export type SearchParams = {
   [key: string]: string | string[] | undefined;
 };
 
-// 定义主接口
 export interface TypeData {
   damage_relations: {
     double_damage_from: NamedAPIResource[];

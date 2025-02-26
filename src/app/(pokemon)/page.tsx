@@ -9,9 +9,13 @@ import Link from 'next/link';
 export default async function Page(props: {
   searchParams?: Promise<SearchParams>;
 }) {
+  // 获取searchParams
   const searchParams = await props.searchParams;
+  // 获取types
   const types = getPokemonsByType();
+  // 获取typeCsv
   const typeCsv = (searchParams?.type as string)?.trim() || '';
+  // 获取offset
   const offset = Number(searchParams?.page) || 1;
 
   const { count, results, next, previous } = await getPaginatedPokemons({

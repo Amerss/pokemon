@@ -3,6 +3,7 @@ interface PokemonCardProps {
 }
 
 const PokemonCard = async ({ url }: PokemonCardProps) => {
+  // 请求pokemon详情
   const res = await fetch(url).then((res) => res.json());
   const { name, id, sprites } = res;
   return (

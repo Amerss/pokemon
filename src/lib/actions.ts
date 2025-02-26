@@ -1,6 +1,7 @@
 import { PAGE_SIZE, TYPE_SEPARATOR } from '@/config';
 import { NamedAPIResource, Result, TypeData } from '@/interface';
 
+// 获取宝可梦列表
 export const getPokemons = async ({
   limit = PAGE_SIZE,
   offset = 0,
@@ -22,8 +23,8 @@ export const getPokemons = async ({
 };
 
 export const getPokemonsByType: {
-  (type: string): Promise<TypeData>;
-  (): Promise<Result>;
+  (type: string): Promise<TypeData>; // 获取该类型下的宝可梦
+  (): Promise<Result>; // 获取宝可梦类型集合
 } = async (type?: string) => {
   const res = await fetch(`https://pokeapi.co/api/v2/type/${type || ''}`, {
     cache: 'force-cache',
@@ -34,6 +35,7 @@ export const getPokemonsByType: {
   return await res.json();
 };
 
+// 获取多个类型下的宝可梦
 export const getPokemonsByTypes = async (
   types: string
 ): Promise<Array<NamedAPIResource>> => {
