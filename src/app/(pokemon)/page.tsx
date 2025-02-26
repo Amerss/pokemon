@@ -1,7 +1,7 @@
 import { TypeGroup } from '@/components';
 import { PAGE_SIZE, TYPE_SEPARATOR } from '@/config';
 import { SearchParams } from '@/interface';
-import { getPokemonsByType, getPaginatedPokemons } from '@/app/lib';
+import { getPokemonsByType, getPaginatedPokemons } from '@/lib';
 import PokemonCard from '@/components/pokemon-card';
 import { Suspense } from 'react';
 import Link from 'next/link';
