@@ -17,7 +17,7 @@ export default async function Page(props: {
   const typeCsv = (searchParams?.type as string)?.trim() || '';
   // 获取offset
   const offset = Number(searchParams?.page) || 1;
-
+  // 获取pokemons
   const { count, results, next, previous } = await getPaginatedPokemons({
     type: typeCsv,
     limit: PAGE_SIZE,
